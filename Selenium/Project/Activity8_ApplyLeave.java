@@ -54,13 +54,26 @@ public class Activity8_ApplyLeave {
 		WebElement leaveFromDate = wait.until(ExpectedConditions.elementToBeClickable(By.id("applyleave_txtFromDate")));
 		leaveFromDate.clear();
 		leaveFromDate.click();
-		leaveFromDate.sendKeys("2026-01-25");
+		leaveFromDate.sendKeys("2026-01-29");
 		WebElement leaveToDate = wait.until(ExpectedConditions.elementToBeClickable(By.id("applyleave_txtToDate")));
 		leaveToDate.clear();
 		leaveToDate.click();
-		leaveToDate.sendKeys("2026-01-25");
+		leaveToDate.sendKeys("2026-01-29");
 		WebElement leaveApplyBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("applyBtn")));
 		leaveApplyBtn.click();
+		WebElement myLeave=driver.findElement(By.xpath("//a[@id='menu_leave_viewMyLeaveList']"));
+		myLeave.click();
+		WebElement FromDate = wait.until(ExpectedConditions.elementToBeClickable(By.id("calFromDate")));
+		FromDate.clear();
+		FromDate.click();
+		FromDate.sendKeys("2026-01-29");
+		WebElement ToDate = wait.until(ExpectedConditions.elementToBeClickable(By.id("calToDate")));
+		ToDate.clear();
+		ToDate.click();
+		ToDate.sendKeys("2026-01-29");
+		WebElement leavesrchbtn=driver.findElement(By.id("btnSearch"));
+		leavesrchbtn.click();
+		
 
 	}
 
