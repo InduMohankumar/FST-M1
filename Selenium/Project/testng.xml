@@ -6,6 +6,7 @@
       <class name="activities.Activity1_VerifyWebsiteTitle"/>
       <class name="activities.Activity2_GetUrlOfHeaderImage"/>
       <class name="activities.Activity3_LoggingIn"/> 
+      <class name="activities.Activity4_AddEmp"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
