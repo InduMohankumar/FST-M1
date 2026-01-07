@@ -58,9 +58,13 @@ public class LoginSteps extends BaseClass {
 
     @Then("get the confirmation text and verify message as {string}")
     public void confirmMessageAsInput(String expectedMessage) {
-    	// Find the confirmation message
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector("h2.mt-5"), "Welcome"));
-        String message = driver.findElement(By.cssSelector("h2.mt-5")).getText();
+        // Find the message
+        String message = "NOT FOUND";
+        if (expectedMessage.contains("Invalid")) {
+            message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2#subheading"))).getText();
+        } else {
+            message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2.mt-5"))).getText();
+        }
         // Assert message
         Assertions.assertEquals(expectedMessage, message);
     }
